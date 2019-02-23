@@ -15,7 +15,8 @@ public class Subastas {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Broker broker = new Broker();
+        if(broker.getConnection()==null){System.out.println("Not connected to database");}else{System.out.println("Connection successfully");}
     }
     
 }
