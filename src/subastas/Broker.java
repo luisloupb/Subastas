@@ -33,7 +33,7 @@ public class Broker {
     }
 
     /**
-     * @return the conn
+     * @return la conexión con la BD
      */
     public Connection getConn() {
         return conn;
