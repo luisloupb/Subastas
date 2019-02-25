@@ -15,8 +15,8 @@ public class Subastas {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Broker broker = new Broker();
-        if(broker.getConnection()==null){System.out.println("Not connected to database");}else{System.out.println("Connection successfully");}
+        frmRegistro reg = new frmRegistro();
+        reg.setVisible(true);
     }
     
 }
