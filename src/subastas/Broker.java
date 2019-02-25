@@ -14,18 +14,28 @@ import java.sql.DriverManager;
  * Clase que se encarga de la comunicación con la BD
  */
 public class Broker {
-    private static Connection conn = null;    
+    private Connection conn = null;    
     public Broker(){
-        
+        this.conn = Broker.getConnection();
     }
-    public static Connection getConnection(){
+    /**
+     * Metodo encargado de establecer la conexión con la BD
+     * @return 
+     */
+    public static Connection getConnection(){        
         try{  
             Class.forName("com.mysql.jdbc.Driver");
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/login?user=root&password=Upb2018");
-        }catch(Exception e){
-            conn = null;
+             return DriverManager.getConnection("jdbc:mysql://localhost:3306/login?user=root&password=Upb2018");
+        }catch(Exception e){                        
             System.out.println(e.getMessage());
-        }
+            return null;
+        }        
+    }
+
+    /**
+     * @return the conn
+     */
+    public Connection getConn() {
         return conn;
     }
 }
